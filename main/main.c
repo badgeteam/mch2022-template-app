@@ -11,13 +11,13 @@
 #include "freertos/queue.h"
 #include "esp_system.h"
 
-pax_buf_t buf;
+static pax_buf_t pax_buffer;
 xQueueHandle buttonQueue;
 
 static const char *TAG = "mch2022-demo-app";
 
 void disp_flush() {
-    ili9341_write(get_ili9341(), buf.buf);
+    ili9341_write(get_ili9341(), pax_buffer.buf);
 }
 
 void app_main() {
@@ -27,10 +27,10 @@ void app_main() {
     buttonQueue = get_rp2040()->queue;
     
     // Init GFX.
-    pax_buf_init(&buf, NULL, 320, 240, PAX_BUF_16_565RGB);
+    pax_buf_init(&pax_buffer, NULL, 320, 240, PAX_BUF_16_565RGB);
     
     // Show some hello world.
-    pax_background(&buf, 0xffff00ff);
+    pax_background(&pax_buffer, 0xffff00ff);
     disp_flush();
     
     // Just wait.
