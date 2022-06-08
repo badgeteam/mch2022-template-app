@@ -4,7 +4,7 @@ IDF_PATH ?= $(shell pwd)/esp-idf
 IDF_EXPORT_QUIET ?= 0
 SHELL := /usr/bin/env bash
 
-.PHONY: prepare clean build flash erase monitor menuconfig image qemu install
+.PHONY: prepare clean build flash erase monitor menuconfig image
 
 all: prepare build flash
 
@@ -35,9 +35,3 @@ image:
 	cd "$(BUILDDIR)"; dd if=bootloader/bootloader.bin bs=1 seek=4096 of=flash.bin conv=notrunc
 	cd "$(BUILDDIR)"; dd if=partition_table/partition-table.bin bs=1 seek=36864 of=flash.bin conv=notrunc
 	cd "$(BUILDDIR)"; dd if=main.bin bs=1 seek=65536 of=flash.bin conv=notrunc
-
-qemu: image
-	cd "$(BUILDDIR)"; qemu-system-xtensa -nographic -machine esp32 -drive 'file=flash.bin,if=mtd,format=raw'
-
-install: flash
-

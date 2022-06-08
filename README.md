@@ -1,6 +1,6 @@
-# MCH2022 ESP32 firmware: Launcher
+# MCH2022 template app
 
-This repository contains the ESP32 part of the firmware for the MCH2022 badge. This firmware allows for device testing, setup, OTA updates and of course launching apps.
+This repository contains a template app for the MCH2022 badge.
 
 ## License
 
