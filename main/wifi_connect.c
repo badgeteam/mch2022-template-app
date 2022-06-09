@@ -10,8 +10,6 @@
 #include <nvs_flash.h>
 #include <nvs.h>
 #include "pax_gfx.h"
-#include "system_wrapper.h"
-#include "settings.h"
 #include "wifi_connection.h"
 
 static const char *TAG = "wifi_connect";
