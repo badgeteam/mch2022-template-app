@@ -24,8 +24,8 @@ Source code included as submodules is licensed separately, please check the foll
 
 ## How to make
 ```sh
-git clone --recursive https://github.com/badgeteam/mch2022-firmware-esp32
-cd mch2022-firmware-esp32
+git clone --recursive https://github.com/badgeteam/mch2022-template-app
+cd mch2022-template-app
 make prepare
 make
 ```
