@@ -10,6 +10,10 @@
 #include "freertos/task.h"
 #include "freertos/queue.h"
 #include "esp_system.h"
+#include "nvs.h"
+#include "nvs_flash.h"
+#include "wifi_connect.h"
+#include "wifi_connection.h"
 
 static pax_buf_t buf;
 xQueueHandle buttonQueue;
@@ -28,6 +32,12 @@ void app_main() {
     
     // Init GFX.
     pax_buf_init(&buf, NULL, 320, 240, PAX_BUF_16_565RGB);
+    
+    // Init NVS.
+    nvs_flash_init();
+    
+    // Init (but not connect to) WiFi.
+    wifi_init();
     
     while (1) {
         // Pick a random background color.
