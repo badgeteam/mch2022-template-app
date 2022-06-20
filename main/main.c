@@ -2,18 +2,6 @@
 // This file contains a simple hello world app which you can base you own apps on.
 
 #include "main.h"
-#include "hardware.h"
-#include "pax_gfx.h"
-#include "pax_codecs.h"
-#include "ili9341.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "freertos/queue.h"
-#include "esp_system.h"
-#include "nvs.h"
-#include "nvs_flash.h"
-#include "wifi_connect.h"
-#include "wifi_connection.h"
 
 static pax_buf_t buf;
 xQueueHandle buttonQueue;
@@ -22,6 +10,11 @@ static const char *TAG = "mch2022-demo-app";
 
 void disp_flush() {
     ili9341_write(get_ili9341(), buf.buf);
+}
+
+void exit_to_launcher() {
+    REG_WRITE(RTC_CNTL_STORE0_REG, 0);
+    esp_restart();
 }
 
 void app_main() {
@@ -60,5 +53,10 @@ void app_main() {
         // Await any button press and do another cycle.
         rp2040_input_message_t message;
         xQueueReceive(buttonQueue, &message, portMAX_DELAY);
+        
+        if (message.input == RP2040_INPUT_BUTTON_HOME && message.state) {
+            // If home is pressed, exit to launcher.
+            exit_to_launcher();
+        }
     }
 }
