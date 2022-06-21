@@ -29,3 +29,5 @@ cd mch2022-template-app
 make prepare
 make
 ```
+
+This will produce the `main.bin` file in the `build` folder that contains the compiled application.
