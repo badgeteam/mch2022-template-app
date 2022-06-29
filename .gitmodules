@@ -28,9 +28,6 @@
 [submodule "components/ws2812"]
 	path = components/ws2812
 	url = https://github.com/badgeteam/esp32-component-ws2812.git
-[submodule "components/mch2022-efuse"]
-	path = components/mch2022-efuse
-	url = https://github.com/badgeteam/esp32-component-mch2022-efuse.git
 [submodule "components/mch2022-bsp"]
 	path = components/mch2022-bsp
 	url = https://github.com/badgeteam/esp32-component-mch2022-bsp.git
@@ -40,3 +37,6 @@
 [submodule "main/pax-keyboard"]
 	path = components/pax-keyboard
 	url = https://github.com/robotman2412/pax-keyboard
+[submodule "components/i2c-bme680"]
+	path = components/i2c-bme680
+	url = https://github.com/badgeteam/esp32-component-bme680.git
