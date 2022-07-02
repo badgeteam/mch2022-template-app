@@ -18,8 +18,8 @@ clean:
 build:
 	source "$(IDF_PATH)/export.sh" && idf.py build
 
-flash: build
-	source "$(IDF_PATH)/export.sh" && idf.py flash -p $(PORT)
+install: build
+	python3 tools/webusb_push.py "Template App" build/main.bin --run
 
 erase:
 	source "$(IDF_PATH)/export.sh" && idf.py erase-flash -p $(PORT)
