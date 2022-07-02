@@ -18,7 +18,7 @@ clean:
 build:
 	source "$(IDF_PATH)/export.sh" && idf.py build
 
-install: build
+install: prepare build
 	python3 tools/webusb_push.py "Template App" build/main.bin --run
 
 erase:
