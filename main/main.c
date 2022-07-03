@@ -47,7 +47,7 @@ void app_main() {
         // This text is shown on screen.
         char             *text = "Hello, World!";
         // Pick the font to draw in (this is the only one that looks nice this big).
-        const pax_font_t *font = pax_get_font("saira condensed");
+        const pax_font_t *font = pax_font_saira_condensed;
         // Determine how large the text is so it can be centered.
         pax_vec1_t        dims = pax_text_size(font, font->default_size, text);
         // Use info to draw the centered text.
