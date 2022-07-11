@@ -1,12 +1,15 @@
 # MCH2022 template app
 
 This repository contains a template app for the MCH2022 badge.
+It is intended to be used as the basis for developing your own native ESP32
+apps. See [Getting Started](https://badge.team/docs/badges/mch2022/software-development/esp_idf_getting_started/)
 
 ## License
 
-The source code contained in this repository is licensed under terms of the MIT license, more information can be found in the LICENSE file.
+The source code contained in the main folder of this example is public domain / CC0 licensed, use it as you please.
 
-Source code included as submodules is licensed separately, please check the following table for details.
+Source code included as submodules is licensed separately, please check the
+following table for details.
 
 | Submodule                   | License                           | Author                                                 |
 |-----------------------------|-----------------------------------|--------------------------------------------------------|
@@ -20,7 +23,7 @@ Source code included as submodules is licensed separately, please check the foll
 | components/sdcard           | MIT                               | Nicolai Electronics                                    |
 | components/spi-ice40        | MIT                               | Nicolai Electronics                                    |
 | components/spi-ili9341      | MIT                               | Nicolai Electronics                                    |
-| components/ws2812           | MIT                               | Unlicense / Public domain                              |
+| components/ws2812           | Unlicense / Public domain         | None                                                   |
 
 ## How to make
 ```sh
