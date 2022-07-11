@@ -6,7 +6,7 @@ SHELL := /usr/bin/env bash
 
 .PHONY: prepare clean build flash erase monitor menuconfig
 
-all: prepare build
+all: install
 
 prepare:
 	git submodule update --init --recursive
@@ -18,11 +18,8 @@ clean:
 build:
 	source "$(IDF_PATH)/export.sh" && idf.py build
 
-install: prepare build
+install: build
 	python3 tools/webusb_push.py "Template App" build/main.bin --run
-
-erase:
-	source "$(IDF_PATH)/export.sh" && idf.py erase-flash -p $(PORT)
 
 monitor:
 	source "$(IDF_PATH)/export.sh" && idf.py monitor -p $(PORT)

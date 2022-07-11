@@ -25,6 +25,10 @@ following table for details.
 | components/spi-ili9341      | MIT                               | Nicolai Electronics                                    |
 | components/ws2812           | Unlicense / Public domain         | None                                                   |
 
+
+Source the `update_components.sh` to update all the submodules to their
+corresponding tips.
+
 ## How to make
 ```sh
 git clone --recursive https://github.com/badgeteam/mch2022-template-app
