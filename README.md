@@ -2,7 +2,7 @@
 
 This repository contains a template app for the MCH2022 badge.
 It is intended to be used as the basis for developing your own native ESP32
-apps. See [Getting Started](https://badge.team/docs/badges/mch2022/software-development/esp_idf_getting_started/)
+apps. See [Getting Started](https://badge.team/docs/badges/mch2022/software-development/esp-idf/esp_idf_getting_started/)
 
 ## License
 
