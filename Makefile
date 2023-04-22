@@ -24,7 +24,7 @@ build:
 	source "$(IDF_PATH)/export.sh" && idf.py build
 
 install: build
-	python3 tools/webusb_push.py "Template App" build/main.bin --run
+	python3 tools/app_push.py build/main.bin "template_app" "Template App" 1 --run
 
 monitor:
 	source "$(IDF_PATH)/export.sh" && idf.py monitor -p $(PORT)

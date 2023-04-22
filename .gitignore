@@ -4,3 +4,5 @@ sdkconfig.old
 *.bak
 *.old
 .vscode
+dependencies.lock
+esp-idf
