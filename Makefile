@@ -6,14 +6,19 @@ SHELL := /usr/bin/env bash
 
 .PHONY: prepare clean build flash monitor menuconfig
 
-all: prepare build install
+all: build install
 
 prepare:
 	git submodule update --init --recursive
-	cd esp-idf; bash install.sh
+	rm -rf "$(IDF_PATH)"
+	git clone --recursive --branch v4.4.4 https://github.com/espressif/esp-idf.git
+	cd "$(IDF_PATH)"; bash install.sh
 
 clean:
 	rm -rf "$(BUILDDIR)"
+
+fullclean:
+	source "$(IDF_PATH)/export.sh" && idf.py fullclean
 
 build:
 	source "$(IDF_PATH)/export.sh" && idf.py build
